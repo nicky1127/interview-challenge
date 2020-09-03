@@ -8,6 +8,6 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>/testing/setup.js'],
     moduleDirectories: [
         'node_modules',
-        'testing'
+        'src'
     ]
 };
