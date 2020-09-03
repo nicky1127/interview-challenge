@@ -12,7 +12,7 @@ export const getItems = () => {
 
     return client._get(url).then(
       res => {
-        dispatch(actions.getItemsSuccess(res));
+        dispatch(actions.getItemsSuccess(res.data));
       },
       err => {
         console.error("apiItems.getItems: ", err.response);

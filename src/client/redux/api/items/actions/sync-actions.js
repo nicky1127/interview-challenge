@@ -6,7 +6,8 @@ export const getItemsRequest = () => {
 };
 
 export const getItemsSuccess = res => {
-  return { type: types.GET_ITEMS_SUCCESS, payload: res };
+  const payload = res.items ? res.items : null;
+  return { type: types.GET_ITEMS_SUCCESS, payload };
 };
 
 export const getItemsFailure = err => ({
