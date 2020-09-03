@@ -1,0 +1,11 @@
+export const GET_ITEMS_REQUEST = 'GET_ITEMS_REQUEST';
+export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS';
+export const GET_ITEMS_FAILURE = 'GET_ITEMS_FAILURE';
+
+const types = {
+  GET_ITEMS_REQUEST,
+  GET_ITEMS_SUCCESS,
+  GET_ITEMS_FAILURE
+};
+
+export default types;
