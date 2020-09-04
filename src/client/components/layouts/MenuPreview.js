@@ -9,7 +9,7 @@ const MenuPreview = props => {
 
   if (Array.isArray(menuItems) && menuItems.length > 0) {
     content = menuItems.map((item, index) => (
-      <MenuItem key={`menuItem-${index}`} item={item} />
+      <MenuItem key={`menuItem-${index}`} item={item} idx={index} />
     ));
   }
 

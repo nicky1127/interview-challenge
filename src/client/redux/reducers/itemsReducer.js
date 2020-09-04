@@ -33,6 +33,13 @@ const reducer = (state = initialState, action) => {
     };
   }
 
+  if (action.type === REMOVE_ITEM) {
+    return {
+      ...state,
+      selectedItems: action.payload
+    };
+  }
+
   return state;
 };
 
