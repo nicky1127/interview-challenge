@@ -6,10 +6,6 @@ import { addItem } from "../../redux/_actions";
 const SideBarItem = props => {
   const { item } = props;
 
-  const a = ['a','c'];
-  const b =[...a, 'nc'];
-  console.log('b',b)
-
   let content;
 
   if (Array.isArray(item.dietaries) && item.dietaries.length > 0) {
@@ -17,7 +13,7 @@ const SideBarItem = props => {
       <span
         key={`sidebarItem_dietary-${index}`}
         className="dietary"
-        data-testid="sideBarItem"
+        data-testid="sideBarItem_dietary"
       >
         {dietary}
       </span>

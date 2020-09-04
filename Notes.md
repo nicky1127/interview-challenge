@@ -5,3 +5,4 @@
 5. Unit testing for api
 6. Flesh up SideBar and SideBarItem with logics to retrieve items from redux store and dynamically generate SideBarItem array
 7. Unit testing for react components along with sanpshots
+8. build actions for add and remove item indux storage

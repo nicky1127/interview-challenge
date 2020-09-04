@@ -27,7 +27,10 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === ADD_ITEM) {
-    return { ...state, selectedItems: state.selectedItems.concat(action.payload) };
+    return {
+      ...state,
+      selectedItems: state.selectedItems.concat(action.payload)
+    };
   }
 
   return state;

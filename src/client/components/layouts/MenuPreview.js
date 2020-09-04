@@ -1,64 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import MenuItem from "../abstractions/MenuItem";
 
-const MenuPreview = () => (
-  <div data-testid="menuPreview">
-    <h2>Menu preview</h2>
-    <ul className="menu-preview">
-      <li className="item">
-        <h2>Dummy item</h2>
-        <p>
-          <span className="dietary">ve</span>
-          <span className="dietary">v</span>
-          <span className="dietary">n!</span>
-        </p>
-        <button className="remove-item">x</button>
-      </li>
-      <li className="item">
-        <h2>Dummy item</h2>
-        <p>
-          <span className="dietary">ve</span>
-          <span className="dietary">v</span>
-          <span className="dietary">n!</span>
-        </p>
-        <button className="remove-item">x</button>
-      </li>
-      <li className="item">
-        <h2>Dummy item</h2>
-        <p>
-          <span className="dietary">ve</span>
-          <span className="dietary">v</span>
-          <span className="dietary">n!</span>
-        </p>
-        <button className="remove-item">x</button>
-      </li>
-      <li className="item">
-        <h2>Dummy item</h2>
-        <p>
-          <span className="dietary">ve</span>
-          <span className="dietary">v</span>
-          <span className="dietary">n!</span>
-        </p>
-        <button className="remove-item">x</button>
-      </li>
-    </ul>
-  </div>
-);
+const MenuPreview = props => {
+  const { menuItems } = props;
+  let content;
 
-MenuPreview.defaultProps = { items: null, ldgItems: false };
+  if (Array.isArray(menuItems) && menuItems.length > 0) {
+    content = menuItems.map((item, index) => (
+      <MenuItem key={`menuItem-${index}`} item={item} />
+    ));
+  }
+
+  return (
+    <div data-testid="menuPreview">
+      <h2>Menu preview</h2>
+      <ul className="menu-preview">{content}</ul>
+    </div>
+  );
+};
+
+MenuPreview.defaultProps = { menuItems: [] };
 
 MenuPreview.propTypes = {
-  items: PropTypes.array,
-  ldgItems: PropTypes.bool.isRequired
+  menuItems: PropTypes.array
 };
 
 const mapStateToProps = state => {
-  const { items, ldgItems } = state;
+  const { items, selectedItems } = state;
+  const menuItems = [];
+  selectedItems.forEach(el => {
+    const obj = items.find(ele => ele.id === el);
+    menuItems.push(obj);
+  });
   return {
-    items,
-    ldgItems
+    menuItems
   };
 };
 
