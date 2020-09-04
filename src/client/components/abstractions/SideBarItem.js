@@ -24,7 +24,7 @@ const SideBarItem = props => {
     props.addItem(item.id);
   };
   return (
-    <li className="item" onClick={onClickItem}>
+    <li className="sidebar_item item" onClick={onClickItem}>
       <h2>{item.name}</h2>
       <p>{content}</p>
     </li>
