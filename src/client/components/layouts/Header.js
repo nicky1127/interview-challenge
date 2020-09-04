@@ -9,8 +9,8 @@ const Header = props => {
 
   if (Array.isArray(dietariesNum) && dietariesNum.length > 0) {
     content = dietariesNum.map(dietary => (
-      <span>
-        <span>{`${dietary.num}`}</span>{" "}
+      <span class='dietary_num'>
+        <span>{`${dietary.num}x`}</span>{" "}
         <span className="dietary">{`${dietary.dietary}`}</span>
       </span>
     ));

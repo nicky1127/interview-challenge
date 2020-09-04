@@ -111,3 +111,7 @@ button.remove-item:hover {
 button.remove-item:focus {
   outline: none;
 }
+
+.dietary_num {
+  margin: 8px
+}
