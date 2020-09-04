@@ -17,7 +17,9 @@ exports[`SideBar Snapshot matchs 1`] = `
     className="item-picker"
   >
     <li
-      className="item"
+      className="sidebar_item item"
+      data-testid="sideBarItem"
+      onClick={[Function]}
     >
       <h2>
         test
@@ -25,7 +27,7 @@ exports[`SideBar Snapshot matchs 1`] = `
       <p>
         <span
           className="dietary"
-          data-testid="sideBarItem"
+          data-testid="sideBarItem_dietary"
         >
           test
         </span>

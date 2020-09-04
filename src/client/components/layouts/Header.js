@@ -17,7 +17,7 @@ const Header = props => {
   }
 
   return (
-    <div className="menu-summary">
+    <div className="menu-summary" data-testid="header">
       <div className="container">
         <div className="row">
           <div className="col-6 menu-summary-left">

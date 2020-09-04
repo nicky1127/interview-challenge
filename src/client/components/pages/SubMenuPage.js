@@ -6,12 +6,12 @@ import Header from "../layouts/Header";
 import MenuBuilder from "../layouts/MenuBuilder";
 import { getItems } from "../../redux/api/items/apiItems";
 
-const SubMenuPage = (props) => {
+const SubMenuPage = props => {
   useEffect(() => {
     props.getItems();
   }, []);
   return (
-    <div className="wrapper">
+    <div className="wrapper" data-testid="subMenuPage">
       <Header />
       <MenuBuilder />
     </div>

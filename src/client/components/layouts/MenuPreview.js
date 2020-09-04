@@ -15,7 +15,7 @@ const MenuPreview = props => {
 
   return (
     <div data-testid="menuPreview">
-      <h2>Menu preview</h2>
+      <h2>Menu Preview</h2>
       <ul className="menu-preview">{content}</ul>
     </div>
   );

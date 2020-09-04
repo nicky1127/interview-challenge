@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuItem Snapshot matchs 1`] = `
+<li
+  className="item"
+  data-testid="menuItem"
+>
+  <h2>
+    test
+  </h2>
+  <p>
+    <span
+      className="dietary"
+      data-testid="menuItem_dietary"
+    >
+      test
+    </span>
+  </p>
+  <button
+    className="remove-item"
+    onClick={[Function]}
+  >
+    x
+  </button>
+</li>
+`;

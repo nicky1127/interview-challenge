@@ -22,7 +22,7 @@ const MenuItem = props => {
     props.removeItem(idx);
   };
   return (
-    <li className="item">
+    <li className="item" data-testid="menuItem">
       <h2>{item.name}</h2>
       <p>{content}</p>
       <button className="remove-item" onClick={onClickBtn}>

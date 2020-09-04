@@ -1,5 +1,5 @@
 import { render, cleanup } from "@testing-library/react";
-import MenuBuilder from "client/components/layouts/MenuBuilder";
+import Header from "client/components/layouts/Header";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 
@@ -17,24 +17,24 @@ const state = {
 const mockStore = configureMockStore();
 const store = mockStore(state);
 
-describe("MenuBuilder", () => {
+describe("Header", () => {
   it("Snapshot matchs", () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <MenuBuilder />
+          <Header />
         </Provider>
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it("MenuBuilder should render one [data-testid=menuBuilder]", () => {
+  it("Header should render one [data-testid=Header]", () => {
     const { getByTestId } = render(
       <Provider store={store}>
-        <MenuBuilder />
+        <Header />
       </Provider>
     );
-    const container = getByTestId("menuBuilder");
+    const container = getByTestId("header");
     expect(container).toBeInTheDocument();
   });
 });
