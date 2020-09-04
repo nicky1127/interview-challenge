@@ -1,5 +1,6 @@
 import * as types from "../_types";
 
+//middleware to remove item from selected items
 export const itemRemover = store => next => action => {
   if (action.type === types.REMOVE_ITEM) {
     const { selectedItems } = store.getState();
