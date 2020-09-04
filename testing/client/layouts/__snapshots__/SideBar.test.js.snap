@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar Snapshot matchs 1`] = `
+<div
+  data-testid="sideBar"
+>
+  <div
+    className="filters"
+  >
+    <input
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Name"
+    />
+  </div>
+  <ul
+    className="item-picker"
+  >
+    <li
+      className="item"
+    >
+      <h2>
+        test
+      </h2>
+      <p>
+        <span
+          className="dietary"
+          data-testid="sideBarItem"
+        >
+          test
+        </span>
+      </p>
+    </li>
+  </ul>
+</div>
+`;

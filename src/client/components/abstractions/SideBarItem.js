@@ -8,7 +8,7 @@ const SideBarItem = props => {
 
   if (Array.isArray(item.dietaries) && item.dietaries.length > 0) {
     content = item.dietaries.map((dietary, index) => (
-      <span key={`sidebarItem_dietary-${index}`} className="dietary">
+      <span key={`sidebarItem_dietary-${index}`} className="dietary" data-testid='sideBarItem'>
         {dietary}
       </span>
     ));

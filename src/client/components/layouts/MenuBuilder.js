@@ -3,7 +3,7 @@ import SideBar from "./SideBar";
 import MenuPreview from "./MenuPreview";
 
 const MenuBuilder = () => (
-  <div className="container menu-builder">
+  <div className="container menu-builder" data-testid="menuBuilder">
     <div className="row">
       <div className="col-4">
         <SideBar />

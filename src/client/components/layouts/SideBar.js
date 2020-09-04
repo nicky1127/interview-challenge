@@ -35,7 +35,7 @@ const SideBar = props => {
   const renderList = () => content;
   const renderLoading = () => <p>Loading</p>;
   return (
-    <div>
+    <div data-testid="sideBar">
       <div className="filters">
         <input
           className="form-control"

@@ -1,7 +1,7 @@
 import React from "react";
 
 const MenuPreview = () => (
-  <div>
+  <div data-testid="menuPreview">
     <h2>Menu preview</h2>
     <ul className="menu-preview">
       <li className="item">
