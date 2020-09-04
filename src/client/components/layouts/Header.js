@@ -8,8 +8,8 @@ const Header = props => {
   let content;
 
   if (Array.isArray(dietariesNum) && dietariesNum.length > 0) {
-    content = dietariesNum.map(dietary => (
-      <span class='dietary_num'>
+    content = dietariesNum.map((dietary, index) => (
+      <span className="dietary_num" key={`dietary_num_${index}`}>
         <span>{`${dietary.num}x`}</span>{" "}
         <span className="dietary">{`${dietary.dietary}`}</span>
       </span>
