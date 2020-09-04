@@ -1,80 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import SideBarItem from "../abstractions/SideBarItem";
 
 const SideBar = props => {
-  const { items } = props;
+  const { items, ldgItems } = props;
+  const [filter, setFilter] = useState("");
+  const [filtered, setFiltered] = useState(items);
+
+  useEffect(() => {
+    if (filter) {
+      const arr = items.filter(item =>
+        item.name.toLowerCase().includes(filter)
+      );
+      setFiltered(arr);
+    } else {
+      setFiltered(items);
+    }
+  }, [filter, items]);
+
+  let content;
+
+  if (Array.isArray(filtered) && filtered.length > 0) {
+    content = filtered.map((item, index) => (
+      <SideBarItem key={`sidebarItem-${index}`} item={item} />
+    ));
+  }
+
+  const onChangeFilter = evt => {
+    console.log("evt: ", evt.target.value);
+    setFilter(evt.target.value.toLowerCase());
+  };
+
+  const renderList = () => content;
+  const renderLoading = () => <p>Loading</p>;
   return (
     <div>
       <div className="filters">
-        <input className="form-control" placeholder="Name" />
+        <input
+          className="form-control"
+          placeholder="Name"
+          onChange={onChangeFilter}
+        />
       </div>
       <ul className="item-picker">
-        <li className="item">
-          <h2>Dummy item</h2>
-          <p>
-            <span className="dietary">ve</span>
-            <span className="dietary">v</span>
-            <span className="dietary">n!</span>
-          </p>
-        </li>
-        <li className="item">
-          <h2>Dummy item</h2>
-          <p>
-            <span className="dietary">ve</span>
-            <span className="dietary">v</span>
-            <span className="dietary">n!</span>
-          </p>
-        </li>
-        <li className="item">
-          <h2>Dummy item</h2>
-          <p>
-            <span className="dietary">ve</span>
-            <span className="dietary">v</span>
-            <span className="dietary">n!</span>
-          </p>
-        </li>
-        <li className="item">
-          <h2>Dummy item</h2>
-          <p>
-            <span className="dietary">ve</span>
-            <span className="dietary">v</span>
-            <span className="dietary">n!</span>
-          </p>
-        </li>
-        <li className="item">
-          <h2>Dummy item</h2>
-          <p>
-            <span className="dietary">ve</span>
-            <span className="dietary">v</span>
-            <span className="dietary">n!</span>
-          </p>
-        </li>
-        <li className="item">
-          <h2>Dummy item</h2>
-          <p>
-            <span className="dietary">ve</span>
-            <span className="dietary">v</span>
-            <span className="dietary">n!</span>
-          </p>
-        </li>
-        <li className="item">
-          <h2>Dummy item</h2>
-          <p>
-            <span className="dietary">ve</span>
-            <span className="dietary">v</span>
-            <span className="dietary">n!</span>
-          </p>
-        </li>
+        {ldgItems ? renderLoading() : renderList()}
       </ul>
     </div>
   );
 };
 
+SideBar.defaultProps = { items: null, ldgItems: false };
+
+SideBar.propTypes = {
+  items: PropTypes.array,
+  ldgItems: PropTypes.bool.isRequired
+};
+
 const mapStateToProps = state => {
-  const { items } = state;
+  const { items, ldgItems } = state;
   return {
-    items
+    items,
+    ldgItems
   };
 };
 

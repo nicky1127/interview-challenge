@@ -1,7 +1,9 @@
 import * as types from "../api/items/actions/action-types";
 
 const initialState = {
-  items: null
+  items: null,
+  ldgItems: false,
+  ldgSuccItems: false
 };
 
 const reducer = (state = initialState, action) => {

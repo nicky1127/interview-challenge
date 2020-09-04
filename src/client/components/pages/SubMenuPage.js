@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 import Header from "../layouts/Header";
 import MenuBuilder from "../layouts/MenuBuilder";
@@ -15,6 +16,10 @@ const SubMenuPage = (props) => {
       <MenuBuilder />
     </div>
   );
+};
+
+SubMenuPage.propTypes = {
+  getItems: PropTypes.func
 };
 
 const ConnectedSubMenuPage = connect(null, { getItems })(SubMenuPage);
