@@ -12,7 +12,7 @@ beforeEach(() => {
 const props = { item: { name: "test", id: 1, dietaries: ["test"] } };
 
 const state = {
-  selectedItems: [],
+  selectedItemIDs: [],
   items: [{ name: "test", id: 1, dietaries: ["test"] }],
   ldgItems: false,
   ldgSuccItems: false

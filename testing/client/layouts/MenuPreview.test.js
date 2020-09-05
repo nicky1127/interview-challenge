@@ -9,7 +9,7 @@ beforeEach(() => {
 });
 
 const state = {
-  selectedItems: [],
+  selectedItemIDs: [],
   items: [{ name: "test", id: 1, dietaries: ["test"] }],
   ldgItems: false,
   ldgSuccItems: false

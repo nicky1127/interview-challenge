@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
+import { filterItemsById, getNumsOfAllDiets } from "../../helpers";
 const Header = props => {
   const { dishNum, dietariesNum } = props;
 
@@ -30,33 +30,22 @@ const Header = props => {
   );
 };
 
-Header.defaultProps = { selectedItems: [] };
+Header.defaultProps = { dishNum: 0, dietariesNum: [] };
 
 Header.propTypes = {
-  selectedItems: PropTypes.array
+  dishNum: PropTypes.number.isRequired,
+  dietariesNum: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => {
-  const { selectedItems, items } = state;
-  const dietaries = ["v", "ve", "df", "gf", "n!", "rsf"];
-  const menuItems = [];
+  const { selectedItemIDs, items } = state;
 
-  selectedItems.forEach(el => {
-    const obj = items.find(ele => ele.id === el);
-    menuItems.push(obj);
-  });
+  const menuItems = filterItemsById(items, selectedItemIDs);
 
-  const dietariesNum = [];
-  dietaries.forEach(dietary => {
-    let num = 0;
-    menuItems.forEach(item => {
-      item.dietaries.find(el => el === dietary) && num++;
-    });
-    num && dietariesNum.push({ dietary, num });
-  });
+  const dietariesNum = getNumsOfAllDiets(menuItems);
 
   return {
-    dishNum: selectedItems.length,
+    dishNum: selectedItemIDs.length,
     dietariesNum
   };
 };

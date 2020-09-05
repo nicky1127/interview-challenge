@@ -16,7 +16,7 @@ yarn test (or npm run test)
 4. Build api for retrieving items from the server and store the response in a redux architecture
 5. Unit testing for api class
 6. Flesh up SideBar and SideBarItem with logics to retrieve items from redux store and dynamically generate SideBarItem array as well as to filter items by the string in the search bar
-6. Flesh up MenuPreview and MenuItem with logics to retrieve selectedItems from redux store and dynamically generate MenuItem array
+6. Flesh up MenuPreview and MenuItem with logics to retrieve selectedItemIDs from redux store and dynamically generate MenuItem array
 7. Unit testing for react components along with sanpshots
 8. Build actions for adding and removing item in redux storage and call these functions in SideBar and MenuPreview components
 9. Refactor Header comonent and build filtering functions to calcualting the total numbers of dishes and dietaries

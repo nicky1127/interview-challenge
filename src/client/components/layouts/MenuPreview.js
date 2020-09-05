@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import MenuItem from "../abstractions/MenuItem";
+import { filterItemsById } from "../../helpers";
 
 const MenuPreview = props => {
   const { menuItems } = props;
@@ -28,12 +29,8 @@ MenuPreview.propTypes = {
 };
 
 const mapStateToProps = state => {
-  const { items, selectedItems } = state;
-  const menuItems = [];
-  selectedItems.forEach(el => {
-    const obj = items.find(ele => ele.id === el);
-    menuItems.push(obj);
-  });
+  const { items, selectedItemIDs } = state;
+  const menuItems = filterItemsById(items,selectedItemIDs) ;
   return {
     menuItems
   };

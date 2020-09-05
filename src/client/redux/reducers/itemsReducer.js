@@ -3,7 +3,7 @@ import { ADD_ITEM, REMOVE_ITEM } from "../_types";
 
 const initialState = {
   items: null,
-  selectedItems: [],
+  selectedItemIDs: [],
   ldgItems: false,
   ldgSuccItems: false
 };
@@ -29,14 +29,14 @@ const reducer = (state = initialState, action) => {
   if (action.type === ADD_ITEM) {
     return {
       ...state,
-      selectedItems: state.selectedItems.concat(action.payload)
+      selectedItemIDs: state.selectedItemIDs.concat(action.payload)
     };
   }
 
   if (action.type === REMOVE_ITEM) {
     return {
       ...state,
-      selectedItems: action.payload
+      selectedItemIDs: action.payload
     };
   }
 
