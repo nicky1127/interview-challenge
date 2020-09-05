@@ -11,7 +11,7 @@ yarn test (or npm run test)
 # Approach and Thoughts
 
 1. Install packages: prop-types, redux, redux-thunk
-2. Build folder struture for react custom components, redux and testing
+2. Build folder struture for react custom components, redux, helpers and testing
 3. Break down code in App.js and refactor them into custom components
 4. Build api for retrieving items from the server and store the response in a redux architecture
 5. Unit testing for api class
